@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 import { styles } from "./src/styles/Styles";
 
 export default function App() {
@@ -23,6 +23,20 @@ export default function App() {
     inputMode={'text'}
     style={styles.gasolina}
     />
+
+<TouchableOpacity
+        style={styles.botao}
+        onPress={() => alert("Calculo Realizado")}
+      >
+        <Text
+          style={{ fontSize: 20, color: "black", textAlign: "center", }}
+        >
+          Calcular
+        </Text>
+      </TouchableOpacity>
+
+
+
 
 
       

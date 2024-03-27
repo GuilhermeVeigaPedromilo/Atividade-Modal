@@ -37,4 +37,15 @@ height: 40,
     height: 40,
       },
 
+      botao: {
+        margin: 20,
+        color: "black",
+        backgroundColor: "red",
+        fontWeight: "bold",
+        fontSize: 20,
+        textAlign:"center",
+        borderRadius: 5,
+        width: 350,
+        height: 40,
+          },
 });
