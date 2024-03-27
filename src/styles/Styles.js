@@ -1,51 +1,61 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "black",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'black',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+    },
 
-  logo: {
-    width: 300,
-    height: 300,
-    margin: 20,
-  },
+    ImagesStyles:{
+        width: 200,
+        height: 200,
+        borderRadius: 50,
+    },
 
-  alcool: {
-    margin: 20,
-color: "black",
-backgroundColor: "white",
-fontWeight: "bold",
-fontSize: 20,
-textAlign:"center",
-borderRadius: 5,
-width: 350,
-height: 40,
-  },
+    h1: {
+        fontSize: 25,
+        marginTop: 20,
+        marginBottom: 50,
+    },
 
-  gasolina: {
-    color: "black",
-    backgroundColor: "white",
-    fontWeight: "bold",
-    fontSize: 20,
-    textAlign:"center",
-    borderRadius: 5,
-    width: 350,
-    height: 40,
-      },
+    label:{
+        fontSize: 15,
+        color: 'white',
+        textAlign: 'left',
+        marginTop: 15,
+        fontWeight: 'bold',
+    },
 
-      botao: {
-        margin: 20,
-        color: "black",
-        backgroundColor: "red",
-        fontWeight: "bold",
+    Inputs: {
+        backgroundColor: 'white',
+        borderWidth: 5,
+        borderRadius: 10,
+        borderColor: 'white',
+        color: 'black',
+        padding: 5,
+        width: 305,
+        margin: 1.5,
+    },
+
+    Touch: {
+        borderWidth: 5,
+        borderRadius: 10,
+        width: 305,
+        margin: 36.5,
+    },
+
+    TouchText: {
+        textAlign: 'center',
         fontSize: 20,
-        textAlign:"center",
-        borderRadius: 5,
-        width: 350,
-        height: 40,
-          },
-});
+        padding: 3,
+    },
+
+    Values: {
+      color: 'white',
+    },
+  });
+
+  export default styles;

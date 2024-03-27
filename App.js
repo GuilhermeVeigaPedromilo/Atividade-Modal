@@ -1,45 +1,71 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
-import { styles } from "./src/styles/Styles";
+import React, { useState,} from "react";
+import { Modal, Text, View } from "react-native";
+import styles from "./src/styles/Styles";
+import InputsProps from "./src/components/TextInputProps";
+import TextProps from "./src/components/TextProps";
+import TouchableOpacityProps from "./src/components/TouchableOpacityProps";
+import Titulo from "./src/components/Título";
+import ImageProps from "./src/components/ImageProps";
+
 
 export default function App() {
+  const [visivel, setVisivel] = useState(false);
+
+  const [valorAlc, setValorAlc] = useState("");
+  const [valorGas, setValorGas] = useState("");
+  const [analisevalor, setAnalise] = useState("");
+
+  const Calculo = () => {
+
+    const result = valorAlc / valorGas;
+
+    const analisevalor = result < 0.7 ? 'Álcool' : 'Gasolina';
+
+    const conclusao = "Compensa usar " + analisevalor;
+    setAnalise(conclusao);
+    console.log(result);
+  };
   return (
     <View style={styles.container}>
-      <Image
-        source={require("./src/assets/images/logo.png")}
-        style={styles.logo}
-      />
-      <Text style={{ color: "white", fontSize: 30, fontWeight: "bold" }}>
-        Qual melhor opção?
-      </Text>
-
-      <TextInput
-    placeholder='Insira o preço do álcool'
-    inputMode={'text'}
-    style={styles.alcool}
-    />
-          <TextInput
-    placeholder='Insira o preço da gasolina'
-    inputMode={'text'}
-    style={styles.gasolina}
-    />
-
-<TouchableOpacity
-        style={styles.botao}
-        onPress={() => alert("Calculo Realizado")}
+      <Titulo />
+        <View>
+          <TextProps
+            TextStyle={styles.label}
+            Texto={"Álcool (preço por litro):"}
+          ></TextProps>
+          <InputsProps InputStyle={styles.Inputs} TypeTeclado="numeric" onChangeText={setValorAlc} />
+          <TextProps
+            TextStyle={styles.label}
+            Texto={"Gasolina (preço por litro):"}
+          ></TextProps>
+          <InputsProps InputStyle={styles.Inputs} onChangeText={setValorGas} TypeTeclado="numeric" />
+          
+        </View>
+        <TouchableOpacityProps
+        TouchStyle={[styles.Touch, {backgroundColor: '#ff0a02'}]}
+        OnPress={() => {
+          Calculo();
+          setVisivel(true);
+        }}
       >
-        <Text
-          style={{ fontSize: 20, color: "black", textAlign: "center", }}
-        >
-          Calcular
-        </Text>
-      </TouchableOpacity>
-
-
-
-
-
-      
+        <TextProps TextStyle={[styles.TouchText, {color: 'white'}]} Texto={"Calcular"}></TextProps>
+      </TouchableOpacityProps>
+      <Modal animationType="slide" transparent={true} visible={visivel}>
+        <View style={styles.container}>
+        <ImageProps ImageUri={require('./src/assets/images/gas.png')} ImageStyle={styles.ImagesStyles}/>
+        <TextProps TextStyle={[styles.h1, {color: 'yellow'}]} Texto={analisevalor} />
+        <TextProps TextStyle={styles.Values} Texto="Com os preços:"/>
+        <TextProps TextStyle={styles.Values}>{setValorAlc}</TextProps>
+        <TextProps TextStyle={styles.Values}>{setValorGas}</TextProps>
+          <TouchableOpacityProps
+            OnPress={() => {
+              setVisivel(false);
+            }}
+            TouchStyle={[styles.Touch, { borderColor: '#0ba407'}]}>
+            <TextProps TextStyle={[styles.TouchText, {color: '#0ba407',}]} Texto={"Calcular novamente"}></TextProps>
+          </TouchableOpacityProps>
+        </View>
+      </Modal>
     </View>
   );
 }
