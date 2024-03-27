@@ -18,7 +18,11 @@ const styles = StyleSheet.create({
     h1: {
         fontSize: 25,
         marginTop: 20,
-        marginBottom: 50,
+        marginBottom: 40,
+    },
+
+    h2: {
+      fontSize: 20,
     },
 
     label:{
@@ -54,7 +58,10 @@ const styles = StyleSheet.create({
     },
 
     Values: {
+      fontSize: 15,
       color: 'white',
+      marginTop: '25',
+      margin: 2,
     },
   });
 
