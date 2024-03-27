@@ -12,4 +12,13 @@ export const styles = StyleSheet.create({
     width: 300,
     height: 300,
   },
+
+  alcool: {
+color: "black",
+backgroundColor: "white",
+borderRadius: 5,
+width: "90%",
+height: 40,
+  },
+
 });
