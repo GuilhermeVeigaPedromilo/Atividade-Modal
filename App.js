@@ -18,6 +18,11 @@ export default function App() {
     inputMode={'text'}
     style={styles.alcool}
     />
+          <TextInput
+    placeholder='Insira o preço da gasolina'
+    inputMode={'text'}
+    style={styles.gasolina}
+    />
 
 
       
