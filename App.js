@@ -55,8 +55,8 @@ export default function App() {
         <ImageProps ImageUri={require('./src/assets/images/gas.png')} ImageStyle={styles.ImagesStyles}/>
         <TextProps TextStyle={[styles.h1, {color: 'yellow'}]} Texto={analisevalor} />
         <TextProps TextStyle={styles.Values} Texto="Com os preços:"/>
-        <TextProps TextStyle={styles.Values}>{setValorAlc}</TextProps>
-        <TextProps TextStyle={styles.Values}>{setValorGas}</TextProps>
+        <TextProps TextStyle={styles.Values} Texto={valorAlc}/>
+        <TextProps TextStyle={styles.Values} Texto={valorGas}/>
           <TouchableOpacityProps
             OnPress={() => {
               setVisivel(false);
