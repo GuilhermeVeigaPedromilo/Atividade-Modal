@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     color: "white",
-    textAlign: "left",
     marginTop: 15,
     fontWeight: "bold",
   },
@@ -42,6 +41,7 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 305,
     margin: 1.5,
+    alignItems: "center",
   },
 
   Touch: {
