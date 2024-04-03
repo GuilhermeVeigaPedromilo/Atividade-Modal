@@ -26,17 +26,13 @@ const styles = StyleSheet.create({
 
   label: {
     fontSize: 15,
-    color: "white",
     marginTop: 15,
     fontWeight: "bold",
   },
 
   Inputs: {
-    backgroundColor: "white",
     borderWidth: 5,
     borderRadius: 10,
-    borderColor: "white",
-    color: "black",
     padding: 5,
     width: 305,
     margin: 1.5,
@@ -44,8 +40,8 @@ const styles = StyleSheet.create({
   },
 
   Touch: {
-    color: '#ff0a02',
     borderWidth: 5,
+    borderColor: "red",
     borderRadius: 10,
     width: 305,
     margin: 15,
@@ -70,9 +66,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 
+  TouchLight: {
+    width: 30,
+    height: 50,
+  },
+
   Values: {
     fontSize: 15,
-    color: "white",
     marginTop: "25",
     margin: 2,
   },

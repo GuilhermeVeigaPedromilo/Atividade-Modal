@@ -17,39 +17,66 @@ export default function Home({
   Valor2,
   Visualizar,
 }) {
-  const [mudarcor, setMudarcor] = useState("black");
+  const [mudarcor, setMudarcorBackground] = useState("black"); //Muda cor de fundo, sendo preto o estado inical
+
+  const [mudarcortexto, setMudarcorTexto] = useState("white"); //Muda cor de texto, sendo branca o estado inical
+
+  const [mudarcorInput, setMudarcorInput] = useState("white"); //Muda cor de fundo do input, sendo branco o estado inical
+
+  const [mudarcorplaceholder, setMudarcorPlaceholder] = useState("black"); //Muda cor do placeholder, sendo preta o estado inical
 
   return (
     <View style={[styles.container, { backgroundColor: `${mudarcor}` }]}>
       <Titulo
         TouchCorFunctWhite={() => {
-          setMudarcor("#97dcf8");
+          setMudarcorBackground("white");
+          setMudarcorTexto("black");
+          setMudarcorInput("black");
+          setMudarcorPlaceholder("white");
         }}
         TouchCorFunctBlack={() => {
-          setMudarcor("black");
+          setMudarcorBackground("black");
+          setMudarcorTexto("white");
+          setMudarcorInput("white");
+          setMudarcorPlaceholder("black");
         }}
+        color={mudarcortexto}
       />
       <View style={{ alignItems: "center" }}>
         <View style={{ width: 310 }}>
           <TextProps
-            TextStyle={styles.label}
+            TextStyle={[styles.label, { color: `${mudarcortexto}` }]}
             Texto={"Álcool (preço por litro):"}
           />
         </View>
         <InputsProps
-          InputStyle={styles.Inputs}
+          InputStyle={[
+            styles.Inputs,
+            {
+              backgroundColor: `${mudarcorInput}`,
+              borderColor: `${mudarcorInput}`,
+              color: `${mudarcorplaceholder}`,
+            },
+          ]}
           Placeholder="Digite o valor do litro"
           TypeTeclado="numeric"
           onChangeText={Valores1}
         />
         <View style={{ width: 310 }}>
           <TextProps
-            TextStyle={styles.label}
+            TextStyle={[styles.label, { color: `${mudarcortexto}` }]}
             Texto={"Gasolina (preço por litro):"}
           />
         </View>
         <InputsProps
-          InputStyle={styles.Inputs}
+          InputStyle={[
+            styles.Inputs,
+            {
+              backgroundColor: `${mudarcorInput}`,
+              borderColor: `${mudarcorInput}`,
+              color: `${mudarcorplaceholder}`,
+            },
+          ]}
           Placeholder="Digite o valor do litro"
           onChangeText={Valores2}
           TypeTeclado="numeric"
@@ -71,12 +98,15 @@ export default function Home({
         Valor2={Valor2}
         FuncoesTouch={FuncoesTouchClose}
         TouchCorFunctWhite={() => {
-          setMudarcor("#97dcf8");
+          setMudarcorBackground("white");
+          setMudarcorTexto("black");
         }}
         TouchCorFunctBlack={() => {
-          setMudarcor("black");
+          setMudarcorBackground("black");
+          setMudarcorTexto("white");
         }}
         backgroundColor={mudarcor}
+        color={mudarcortexto}
       />
     </View>
   );

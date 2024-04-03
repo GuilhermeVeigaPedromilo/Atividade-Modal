@@ -16,6 +16,7 @@ export default function ModalPage({
   TouchCorFunctWhite,
   TouchCorFunctBlack,
   backgroundColor,
+  color,
 }) {
   return (
     <View>
@@ -23,10 +24,12 @@ export default function ModalPage({
         <View
           style={[styles.container, { backgroundColor: `${backgroundColor}` }]}
         >
-          <TouchCor
-            TouchCorFunctWhite={TouchCorFunctWhite}
-            TouchCorFunctBlack={TouchCorFunctBlack}
-          />
+          <View>
+            <TouchCor
+              TouchCorFunctWhite={TouchCorFunctWhite}
+              TouchCorFunctBlack={TouchCorFunctBlack}
+            />
+          </View>
           <ImageProps
             ImageUri={require("../assets/images/gas.png")}
             ImageStyle={styles.ImagesStyles}
@@ -36,12 +39,15 @@ export default function ModalPage({
             Texto={Analise}
           />
           <TextProps
-            TextStyle={[styles.h2, { color: "white", marginBottom: 10 }]}
+            TextStyle={[styles.h2, { color: `${color}`, marginBottom: 10 }]}
             Texto="Com os preços por litro:"
           />
-          <TextProps TextStyle={styles.Values} Texto={`Álcool: R$${Valor1}`} />
           <TextProps
-            TextStyle={styles.Values}
+            TextStyle={[styles.Values, { color: `${color}` }]}
+            Texto={`Álcool: R$${Valor1}`}
+          />
+          <TextProps
+            TextStyle={[styles.Values, { color: `${color}` }]}
             Texto={`Gasolina: R$${Valor2}`}
           />
           <TouchableOpacityProps
