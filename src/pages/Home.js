@@ -8,8 +8,8 @@ import Titulo from "../components/Título";
 
 export default function Home({ FuncoesTouch, Valores1, Valores2 }) {
   return (
+    <View>      <Titulo/>
     <View style={{ alignItems: "center" }}>
-      <Titulo/>
       <View style={{ width: 310 }}>
         <TextProps
           TextStyle={styles.label}
@@ -43,6 +43,7 @@ export default function Home({ FuncoesTouch, Valores1, Valores2 }) {
           Texto={"Calcular"}
         ></TextProps>
       </TouchableOpacityProps>
+    </View>
     </View>
   );
 }

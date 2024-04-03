@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import styles from "./src/styles/Styles";
-import Titulo from "./src/components/Título";
-import Submenu from "./src/components/Submenu";
-import ModalComp from "./src/components/Modal";
+import ModalComp from "./src/pages/Modal";
+import Home from "./src/pages/Home";
 
 export default function App() {
   const [visivel, setVisivel] = useState(false);
@@ -27,8 +26,7 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      <Titulo />
-      <Submenu
+      <Home
         Valores1={setValorAlc}
         Valores2={setValorGas}
         FuncoesTouch={() => {
