@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
-import styles from "./src/styles/Styles";
-import ModalComp from "./src/pages/ModalPage";
 import Home from "./src/pages/Home";
-import ModalPage from "./src/pages/ModalPage";
 
 export default function App() {
   const [visivel, setVisivel] = useState(false);
