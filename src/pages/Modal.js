@@ -1,9 +1,9 @@
 import React from "react";
 import { Modal, View } from "react-native";
 import styles from "../styles/Styles";
-import TextProps from "./TextProps";
-import TouchableOpacityProps from "./TouchableOpacityProps";
-import ImageProps from "./ImageProps";
+import TextProps from "../components/TextProps";
+import TouchableOpacityProps from "../components/TouchableOpacityProps";
+import ImageProps from "../components/ImageProps";
 
 export default function ModalComp({
   Visible,

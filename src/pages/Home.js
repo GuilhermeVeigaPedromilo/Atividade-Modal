@@ -1,13 +1,15 @@
 import React from "react";
 import { Modal, View } from "react-native";
 import styles from "../styles/Styles";
-import InputsProps from "./TextInputProps";
-import TextProps from "./TextProps";
-import TouchableOpacityProps from "./TouchableOpacityProps";
+import InputsProps from "../components/TextInputProps";
+import TextProps from "../components/TextProps";
+import TouchableOpacityProps from "../components/TouchableOpacityProps";
+import Titulo from "../components/Título";
 
-export default function Submenu({ FuncoesTouch, Valores1, Valores2 }) {
+export default function Home({ FuncoesTouch, Valores1, Valores2 }) {
   return (
     <View style={{ alignItems: "center" }}>
+      <Titulo/>
       <View style={{ width: 310 }}>
         <TextProps
           TextStyle={styles.label}
