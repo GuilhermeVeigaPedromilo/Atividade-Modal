@@ -4,9 +4,10 @@ import styles from "../styles/Styles";
 import TextProps from "../components/TextProps";
 import TouchableOpacityProps from "../components/TouchableOpacityProps";
 import ImageProps from "../components/ImageProps";
+import ModalComp from "../components/Modal";
 
 export default function ModalComp({
-  Visible,
+  Visiualizar,
   Analise,
   Valor1,
   Valor2,
@@ -14,7 +15,7 @@ export default function ModalComp({
 }) {
   return (
     <View>
-      <Modal animationType="slide" transparent={true} visible={Visible}>
+      <ModalComp Visible={Visiualizar}>
         <View style={styles.container}>
           <ImageProps
             ImageUri={require("../assets/images/gas.png")}
@@ -43,7 +44,7 @@ export default function ModalComp({
             ></TextProps>
           </TouchableOpacityProps>
         </View>
-      </Modal>
+      </ModalComp>
     </View>
   );
 }

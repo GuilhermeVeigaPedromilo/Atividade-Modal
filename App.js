@@ -35,7 +35,7 @@ export default function App() {
         }}
       />
       <ModalComp
-        Visible={visivel}
+        Visiualizar={visivel}
         Analise={analisevalor}
         Valor1={valorAlc}
         Valor2={valorGas}

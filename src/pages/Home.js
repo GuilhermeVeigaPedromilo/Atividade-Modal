@@ -8,42 +8,44 @@ import Titulo from "../components/Título";
 
 export default function Home({ FuncoesTouch, Valores1, Valores2 }) {
   return (
-    <View>      <Titulo/>
-    <View style={{ alignItems: "center" }}>
-      <View style={{ width: 310 }}>
-        <TextProps
-          TextStyle={styles.label}
-          Texto={"Álcool (preço por litro):"}
+    <View>
+      {" "}
+      <Titulo />
+      <View style={{ alignItems: "center" }}>
+        <View style={{ width: 310 }}>
+          <TextProps
+            TextStyle={styles.label}
+            Texto={"Álcool (preço por litro):"}
+          />
+        </View>
+        <InputsProps
+          InputStyle={styles.Inputs}
+          Placeholder="Digite o valor do litro"
+          TypeTeclado="numeric"
+          onChangeText={Valores1}
         />
-      </View>
-      <InputsProps
-        InputStyle={styles.Inputs}
-        Placeholder="Digite o valor do litro"
-        TypeTeclado="numeric"
-        onChangeText={Valores1}
-      />
-      <View style={{ width: 310 }}>
-        <TextProps
-          TextStyle={styles.label}
-          Texto={"Gasolina (preço por litro):"}
+        <View style={{ width: 310 }}>
+          <TextProps
+            TextStyle={styles.label}
+            Texto={"Gasolina (preço por litro):"}
+          />
+        </View>
+        <InputsProps
+          InputStyle={styles.Inputs}
+          Placeholder="Digite o valor do litro"
+          onChangeText={Valores2}
+          TypeTeclado="numeric"
         />
+        <TouchableOpacityProps
+          TouchStyle={[styles.Touch, { backgroundColor: "#ff0a02" }]}
+          OnPress={FuncoesTouch}
+        >
+          <TextProps
+            TextStyle={[styles.TouchText, { color: "white" }]}
+            Texto={"Calcular"}
+          ></TextProps>
+        </TouchableOpacityProps>
       </View>
-      <InputsProps
-        InputStyle={styles.Inputs}
-        Placeholder="Digite o valor do litro"
-        onChangeText={Valores2}
-        TypeTeclado="numeric"
-      />
-      <TouchableOpacityProps
-        TouchStyle={[styles.Touch, { backgroundColor: "#ff0a02" }]}
-        OnPress={FuncoesTouch}
-      >
-        <TextProps
-          TextStyle={[styles.TouchText, { color: "white" }]}
-          Texto={"Calcular"}
-        ></TextProps>
-      </TouchableOpacityProps>
-    </View>
     </View>
   );
 }
