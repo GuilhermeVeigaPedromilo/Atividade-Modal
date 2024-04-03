@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import styles from "../styles/Styles";
 import InputsProps from "../components/TextInputProps";
 import TextProps from "../components/TextProps";
 import TouchableOpacityProps from "../components/TouchableOpacityProps";
 import Titulo from "../components/Título";
-import ModalComp from "../components/Modal";
 import ModalPage from "./ModalPage";
 
 export default function Home({
@@ -18,10 +17,18 @@ export default function Home({
   Valor2,
   Visualizar,
 }) {
-  console.log(Visualizar);
+  const [mudarcor, setMudarcor] = useState("black");
+
   return (
-    <View style={styles.container}>
-      <Titulo />
+    <View style={[styles.container, { backgroundColor: `${mudarcor}` }]}>
+      <Titulo
+        TouchCorFunctWhite={() => {
+          setMudarcor("#97dcf8");
+        }}
+        TouchCorFunctBlack={() => {
+          setMudarcor("black");
+        }}
+      />
       <View style={{ alignItems: "center" }}>
         <View style={{ width: 310 }}>
           <TextProps
@@ -63,6 +70,13 @@ export default function Home({
         Valor1={Valor1}
         Valor2={Valor2}
         FuncoesTouch={FuncoesTouchClose}
+        TouchCorFunctWhite={() => {
+          setMudarcor("#97dcf8");
+        }}
+        TouchCorFunctBlack={() => {
+          setMudarcor("black");
+        }}
+        backgroundColor={mudarcor}
       />
     </View>
   );

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Home from "./src/pages/Home";
 
 export default function App() {
-  const [visivel, setVisivel] = useState(false);
+  const [visivel, setVisivel] = useState(false); // Modal
 
-  const [valorAlc, setValorAlc] = useState("");
+  const [valorAlc, setValorAlc] = useState(""); // Função de cálculo
   const [valorGas, setValorGas] = useState("");
   const [analisevalor, setAnalise] = useState("");
 

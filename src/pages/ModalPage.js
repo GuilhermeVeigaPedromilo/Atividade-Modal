@@ -5,6 +5,7 @@ import TextProps from "../components/TextProps";
 import TouchableOpacityProps from "../components/TouchableOpacityProps";
 import ImageProps from "../components/ImageProps";
 import ModalComp from "../components/Modal";
+import TouchCor from "../components/TouchCor";
 
 export default function ModalPage({
   Visualizar,
@@ -12,11 +13,20 @@ export default function ModalPage({
   Valor1,
   Valor2,
   FuncoesTouch,
+  TouchCorFunctWhite,
+  TouchCorFunctBlack,
+  backgroundColor,
 }) {
   return (
     <View>
       <ModalComp Visualizar={Visualizar}>
-        <View style={styles.container}>
+        <View
+          style={[styles.container, { backgroundColor: `${backgroundColor}` }]}
+        >
+          <TouchCor
+            TouchCorFunctWhite={TouchCorFunctWhite}
+            TouchCorFunctBlack={TouchCorFunctBlack}
+          />
           <ImageProps
             ImageUri={require("../assets/images/gas.png")}
             ImageStyle={styles.ImagesStyles}

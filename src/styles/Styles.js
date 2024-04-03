@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
@@ -45,6 +44,7 @@ const styles = StyleSheet.create({
   },
 
   Touch: {
+    color: '#ff0a02',
     borderWidth: 5,
     borderRadius: 10,
     width: 305,
@@ -62,6 +62,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     padding: 7.5,
+  },
+
+  TouchCor: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
   },
 
   Values: {
