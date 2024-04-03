@@ -12,6 +12,6 @@ export default function InputProps({
       placeholder={Placeholder}
       keyboardType={TypeTeclado}
       onChangeText={onChangeText}
-    ></TextInput>
+    />
   );
 }

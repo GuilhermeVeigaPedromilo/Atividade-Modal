@@ -1,15 +1,26 @@
 import React from "react";
-import { Modal, View } from "react-native";
+import { View } from "react-native";
 import styles from "../styles/Styles";
 import InputsProps from "../components/TextInputProps";
 import TextProps from "../components/TextProps";
 import TouchableOpacityProps from "../components/TouchableOpacityProps";
 import Titulo from "../components/Título";
+import ModalComp from "../components/Modal";
+import ModalPage from "./ModalPage";
 
-export default function Home({ FuncoesTouch, Valores1, Valores2 }) {
+export default function Home({
+  FuncoesTouch,
+  FuncoesTouchClose,
+  Valores1,
+  Valores2,
+  Analise,
+  Valor1,
+  Valor2,
+  Visualizar,
+}) {
+  console.log(Visualizar);
   return (
-    <View>
-      {" "}
+    <View style={styles.container}>
       <Titulo />
       <View style={{ alignItems: "center" }}>
         <View style={{ width: 310 }}>
@@ -43,9 +54,16 @@ export default function Home({ FuncoesTouch, Valores1, Valores2 }) {
           <TextProps
             TextStyle={[styles.TouchText, { color: "white" }]}
             Texto={"Calcular"}
-          ></TextProps>
+          />
         </TouchableOpacityProps>
       </View>
+      <ModalPage
+        Visualizar={Visualizar}
+        Analise={Analise}
+        Valor1={Valor1}
+        Valor2={Valor2}
+        FuncoesTouch={FuncoesTouchClose}
+      />
     </View>
   );
 }

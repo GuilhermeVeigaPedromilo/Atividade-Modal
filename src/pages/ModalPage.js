@@ -1,13 +1,13 @@
 import React from "react";
-import { Modal, View } from "react-native";
+import { View } from "react-native";
 import styles from "../styles/Styles";
 import TextProps from "../components/TextProps";
 import TouchableOpacityProps from "../components/TouchableOpacityProps";
 import ImageProps from "../components/ImageProps";
 import ModalComp from "../components/Modal";
 
-export default function ModalComp({
-  Visiualizar,
+export default function ModalPage({
+  Visualizar,
   Analise,
   Valor1,
   Valor2,
@@ -15,7 +15,7 @@ export default function ModalComp({
 }) {
   return (
     <View>
-      <ModalComp Visible={Visiualizar}>
+      <ModalComp Visualizar={Visualizar}>
         <View style={styles.container}>
           <ImageProps
             ImageUri={require("../assets/images/gas.png")}

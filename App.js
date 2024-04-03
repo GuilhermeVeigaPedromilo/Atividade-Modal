@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import styles from "./src/styles/Styles";
-import ModalComp from "./src/pages/Modal";
+import ModalComp from "./src/pages/ModalPage";
 import Home from "./src/pages/Home";
+import ModalPage from "./src/pages/ModalPage";
 
 export default function App() {
   const [visivel, setVisivel] = useState(false);
@@ -25,25 +26,21 @@ export default function App() {
     alert('Caso houver valores com decimal, em vez de "," utilize "."');
   };
   return (
-    <View style={styles.container}>
-      <Home
-        Valores1={setValorAlc}
-        Valores2={setValorGas}
-        FuncoesTouch={() => {
-          Calculo();
-          setVisivel(true);
-        }}
-      />
-      <ModalComp
-        Visiualizar={visivel}
-        Analise={analisevalor}
-        Valor1={valorAlc}
-        Valor2={valorGas}
-        FuncoesTouch={() => {
-          setVisivel(false);
-          Aviso();
-        }}
-      />
-    </View>
+    <Home
+      Valores1={setValorAlc}
+      Valores2={setValorGas}
+      FuncoesTouch={() => {
+        Calculo();
+        setVisivel(true);
+      }}
+      Visualizar={visivel}
+      Analise={analisevalor}
+      Valor1={valorAlc}
+      Valor2={valorGas}
+      FuncoesTouchClose={() => {
+        setVisivel(false);
+        Aviso();
+      }}
+    />
   );
 }

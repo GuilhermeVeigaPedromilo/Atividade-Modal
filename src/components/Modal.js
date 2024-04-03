@@ -1,9 +1,9 @@
 import React from "react";
 import { Modal } from "react-native";
 
-export default function ModalComp({ Visible, children }) {
+export default function ModalComp({ Visualizar, children }) {
   return (
-    <Modal animationType="slide" transparent={true} visible={Visible}>
+    <Modal animationType="slide" transparent={true} visible={Visualizar}>
       {children}
     </Modal>
   );
